@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Dami te ama mucho mucho  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Te Amo Mucho</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cuadrado">
+    <h1>Dami te ama mucho</h1>
+  </div>
+  te amo
+  <div id="muchoOutput"></div>
+  <script>
+    let muchoInterval; 
+    let isRunning = false; 
+    function teAmoMucho(n) {
+      let result = "";
+      for (let i = 0; i < n; i++) {
+        result += " mucho";
+      }
+      return result;
+    }
+    function startStopMucho() {
+      if (isRunning) {
+        clearInterval(muchoInterval);
+        isRunning = false;
+      } else {
+        let n = 1;
+        muchoInterval = setInterval(() => {
+          document.getElementById("muchoOutput").innerHTML = teAmoMucho(n);
+          n++;
+        }, 100);
+        isRunning = true;
+      }
+    }
+    setTimeout(startStopMucho, 1000);
+  </script>
+</body>
+</html>
